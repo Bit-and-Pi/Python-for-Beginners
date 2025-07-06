@@ -1,5 +1,6 @@
 # Welcome ! to *Day 1* of Python for beginners series
 -by [Shubham](https://github.com/Shubham-S151) from [Bit and Pi Youtube Channel](https://www.youtube.com/@BitandPi) 
+*Channel Link :* [![YouTube](https://img.shields.io/badge/YouTube-Bit_and_Pi-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/@BitandPi)
 
 #### Connect to the author and teacher here :
 [![Email](https://img.shields.io/badge/Email-%23D14836.svg?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shubhamsharma15104@gmail.com)
