@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Python Editor (Pyodide)</title>
+  <title>Python Code Editor</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css" />
   <style>
     body { 
@@ -33,7 +33,7 @@
       flex-wrap: wrap;
     }
     .draggable {
-      flex: 1;
+      position: relative;
       margin: 10px;
       padding: 10px;
       background-color: #f9f9f9;
@@ -41,8 +41,25 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      min-width: 45%;  /* This ensures the sections are at least 45% wide */
-      height: calc(100vh - 70px); /* Adjust height to the screen */
+      min-width: 45%;
+      height: calc(100vh - 70px);
+      overflow: hidden;
+    }
+    .resizable {
+      overflow: hidden;
+      resize: both;
+      max-width: 100%;
+      max-height: 100%;
+      background-color: #f4f4f4;
+    }
+    .resizer {
+      width: 10px;
+      background-color: #ccc;
+      cursor: se-resize;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 10px;
     }
     #editor { 
       height: calc(50vh - 20px);
@@ -68,10 +85,10 @@
     }
     @media screen and (max-width: 768px) {
       .container {
-        flex-direction: column; /* Stack vertically on small screens */
+        flex-direction: column;
       }
       .draggable {
-        width: 100%; /* Make sections full width on small screens */
+        width: 100%; 
       }
     }
   </style>
@@ -83,15 +100,15 @@
     Welcome Learner, this is an interactive web Python interpreter by Bit and Pi channel
   </div>
 
-  <h2>Try Python in Your Browser</h2>
+  <h2>Interactive Python Code Editor</h2>
 
   <div class="container">
-    <div id="drag-editor" class="draggable" style="cursor: move;">
+    <div id="drag-editor" class="draggable resizable">
       <h3>Code Editor</h3>
       <textarea id="editor">print("Hello from Python!")</textarea><br>
     </div>
 
-    <div id="drag-output" class="draggable" style="cursor: move;">
+    <div id="drag-output" class="draggable resizable">
       <h3>Output:</h3>
       <div id="output">...</div>
     </div>
@@ -119,6 +136,7 @@
     let pyodideReady = false;
     let pyodide = null;
 
+    // Load Pyodide and required libraries
     async function loadPyodideAndPackages() {
       pyodide = await loadPyodide();
       pyodideReady = true;
@@ -132,7 +150,7 @@
       pyodide.runPython(`
         import sys
         import io
-        sys.stdout = io.StringIO()  // Redirect stdout to capture print statements
+        sys.stdout = io.StringIO()
       `);
     }
 
@@ -163,38 +181,31 @@
       }
     });
 
-    // Drag functionality (for customizability)
-    let dragging = null;
-    let offsetX = 0;
-    let offsetY = 0;
+    // Allow users to resize the editor and output areas
+    const resizableElements = document.querySelectorAll('.resizable');
+    resizableElements.forEach(element => {
+      const resizer = document.createElement('div');
+      resizer.classList.add('resizer');
+      element.appendChild(resizer);
+      
+      let isResizing = false;
 
-    function makeDraggable(element) {
-      element.addEventListener('mousedown', (e) => {
-        dragging = element;
-        offsetX = e.clientX - element.getBoundingClientRect().left;
-        offsetY = e.clientY - element.getBoundingClientRect().top;
-
-        document.addEventListener('mousemove', dragElement);
-        document.addEventListener('mouseup', stopDragging);
+      resizer.addEventListener('mousedown', (e) => {
+        isResizing = true;
+        document.addEventListener('mousemove', resizeElement);
+        document.addEventListener('mouseup', () => {
+          isResizing = false;
+          document.removeEventListener('mousemove', resizeElement);
+        });
       });
-    }
 
-    function dragElement(e) {
-      if (dragging) {
-        dragging.style.position = 'absolute';
-        dragging.style.left = (e.clientX - offsetX) + 'px';
-        dragging.style.top = (e.clientY - offsetY) + 'px';
+      function resizeElement(e) {
+        if (isResizing) {
+          element.style.width = `${e.clientX - element.getBoundingClientRect().left}px`;
+          element.style.height = `${e.clientY - element.getBoundingClientRect().top}px`;
+        }
       }
-    }
-
-    function stopDragging() {
-      dragging = null;
-      document.removeEventListener('mousemove', dragElement);
-      document.removeEventListener('mouseup', stopDragging);
-    }
-
-    makeDraggable(document.getElementById('drag-editor'));
-    makeDraggable(document.getElementById('drag-output'));
+    });
   </script>
 
 </body>
