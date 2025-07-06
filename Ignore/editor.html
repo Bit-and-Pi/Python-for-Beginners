@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Python Editor with Pyodide</title>
+
+<!-- CodeMirror CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.css" />
+
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  #editor { height: 300px; border: 1px solid #ccc; }
+  #output { border: 1px solid #ccc; padding: 10px; white-space: pre-wrap; margin-top: 10px; background: #f9f9f9; }
+  button { margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Python Editor & Interpreter</h2>
+<textarea id="editor">print("Hello, Python!")</textarea><br/>
+<button id="runBtn">Run Code</button>
+
+<h3>Output:</h3>
+<div id="output"></div>
+
+<!-- Load CodeMirror -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.10/mode/python/python.min.js"></script>
+
+<!-- Load Pyodide -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+
+<script>
+  // Initialize CodeMirror editor
+  var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+    mode: "python",
+    lineNumbers: true,
+    indentUnit: 4,
+    tabSize: 4,
+  });
+
+  // Load Pyodide interpreter
+  let pyodideReadyPromise = loadPyodide();
+
+  document.getElementById("runBtn").addEventListener("click", async () => {
+    const outputElem = document.getElementById("output");
+    outputElem.textContent = "Running...";
+    try {
+      const pyodide = await pyodideReadyPromise;
+      let code = editor.getValue();
+      let result = await pyodide.runPythonAsync(code);
+      outputElem.textContent = result === undefined ? "" : result.toString();
+    } catch (err) {
+      outputElem.textContent = err;
+    }
+  });
+</script>
+
+</body>
+</html>
