@@ -40,6 +40,7 @@
   let pyodideReady = false;
   let pyodide = null;
 
+  // Function to load Pyodide
   async function loadPyodideAndPackages() {
     pyodide = await loadPyodide();
     pyodideReady = true;
@@ -48,23 +49,17 @@
 
   loadPyodideAndPackages();
 
+  // Function to redirect stdout to output div
+  function redirectOutput() {
+    pyodide.runPython(`
+      import sys
+      import io
+      sys.stdout = io.StringIO()  # Redirect stdout to capture print statements
+    `);
+  }
+
+  // Button click handler to run code
   document.getElementById("runBtn").addEventListener("click", async () => {
     const output = document.getElementById("output");
-    if (!pyodideReady) {
-      output.textContent = "⏳ Please wait, Pyodide is still loading...";
-      return;
-    }
 
-    output.textContent = ""; // clear old output
-    try {
-      const code = cm.getValue();
-      let result = await pyodide.runPythonAsync(code);
-      output.textContent = result !== undefined ? result.toString() : "✅ Code executed.";
-    } catch (err) {
-      output.textContent = `❌ Error:\n${err}`;
-    }
-  });
-</script>
-
-</body>
-</html>
+    if (!pyodideReady
