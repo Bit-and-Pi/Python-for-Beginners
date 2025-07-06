@@ -12,3 +12,46 @@
 
 ---
 
+# 🐍 Python for Beginners - YouTube Series
+
+Welcome to the official repository for the **Python for Beginners** video series on YouTube! 🚀  
+This playlist is designed to help absolute beginners learn Python from scratch, with clear explanations and hands-on examples.
+
+---
+
+## 📚 What you’ll find here
+
+✅ Example Python scripts & notebooks  
+✅ Practice exercises and mini projects  
+✅ Cheat sheets & helpful links  
+✅ Code snippets from each video
+
+---
+
+## 🎯 Topics Covered
+
+- Basic syntax, variables, and data types
+- Conditional statements & loops
+- Functions and modules
+- Working with lists, dictionaries, and sets
+- File handling & exceptions
+- Simple projects to solidify your learning
+
+---
+
+## ▶️ Watch the full playlist
+
+👉 [**Click here to watch on YouTube**](https://youtube.com/playlist?list=PLfLamZQotDBIzu4VyOhgjDg-vDDTx_Lay&si=6_UNJ6nmR-UpyMpU)
+
+---
+
+## 🚀 How to use this repo
+
+1. Clone or download this repository.
+2. Open the files in your favorite editor (VS Code, PyCharm, Jupyter, etc.).
+3. Follow along with the YouTube videos and run the code examples on your own machine.
+
+```bash
+git clone https://github.com/your-username/python-for-beginners.git
+cd python-for-beginners
+```
