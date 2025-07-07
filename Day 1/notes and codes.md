@@ -165,8 +165,6 @@ if result is None:
 
 ### 3-4 Collection Data Type
 
-### 3-4 Collection Data Type
-
 Python provides several built-in collection data types that group multiple values into a single variable. These collections are versatile and widely used to store, organize, and manipulate data.
 
 The main collection types are:
