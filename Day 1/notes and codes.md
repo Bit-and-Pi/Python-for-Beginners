@@ -12,11 +12,12 @@
 |S.No.|topic name|Navigate|
 |--|--|--|
 |1|Intro to python|[Click Here](#intro-to-python)|
-|2|Data Types in Python|[Click Here](#data-types-in-python)|
-|2-1|String Data Type|[Click Here](#2-1-string-data-type)|
-|2-2|Numeric Data Type|[Click Here](#2-2-numeric-data-type)|
-|2-3|Boolean & None Data Type|[Click Here](#2-3-boolean-and-none-data-type)|
-|2-4|Collection Data Type|[Click Here](#2-4-collection-data-type)|
+|2|Defining a variable|[Click Here](#defining-a-variable)|
+|3|Data Types in Python|[Click Here](#data-types-in-python)|
+|3-1|String Data Type|[Click Here](#3-1-string-data-type)|
+|3-2|Numeric Data Type|[Click Here](#3-2-numeric-data-type)|
+|3-3|Boolean & None Data Type|[Click Here](#3-3-boolean-and-none-data-type)|
+|3-4|Collection Data Type|[Click Here](#3-4-collection-data-type)|
 
 
 ## Intro to Python
@@ -37,6 +38,23 @@ Python is widely used in web development, automation, data analysis, machine lea
 **[🔝Index](#index)**
 
 ---
+
+## Defining a Variable
+
+In Python a variable can be defined by taking name for a variable and then assign it some value using '=' to better understand it refer to the code block below,
+
+Example:
+```python
+x=23            # here x is the variable with 23 value assigned to it 
+name='shubham'  # here "name" is the variable with 'shubham' value assigned to it 
+print(x)        # o/p : 23
+print(name)     # o/p : shubham
+```
+To better understand it try running this code multiple time with different values.
+
+**[🔝Index](#index)**
+
+---
 ## Data Types in Python
 
 Python supports several built-in **data types** that represent different kinds of values. Understanding these types is foundational to programming in Python.
@@ -51,7 +69,7 @@ Each type has unique properties and methods, and Python automatically manages me
 
 **[🔝Index](#index)**
 
-### 2-1 String Data Type
+### 3-1 String Data Type
 
 Strings (`str`) in Python represent sequences of Unicode characters. Strings are **immutable**, meaning once created, they cannot be changed directly.
 
@@ -71,7 +89,7 @@ print(greeting)  # Output: Hello, Alice!
 
 **[🔝Index](#index)**
 
-### 2-2 Numeric Data Type
+### 3-2 Numeric Data Type
 
 Python has three main numeric types:
 
@@ -96,7 +114,7 @@ print(a / b)   # Float division, output: 3.3333333333333335
 
 **[🔝Index](#index)**
 
-### 2-3 Boolean and None Data Type
+### 3-3 Boolean and None Data Type
 
 **Boolean (bool)**
 - Represents truth values: True and False.
@@ -127,9 +145,9 @@ if result is None:
 
 **[🔝Index](#index)**
 
-### 2-4 Collection Data Type
+### 3-4 Collection Data Type
 
-### 2-4 Collection Data Type
+### 3-4 Collection Data Type
 
 Python provides several built-in collection data types that group multiple values into a single variable. These collections are versatile and widely used to store, organize, and manipulate data.
 
