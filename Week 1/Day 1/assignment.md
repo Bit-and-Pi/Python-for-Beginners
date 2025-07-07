@@ -50,4 +50,4 @@ name = "Alice"
 print(f"Hello, {name}")
 ```
 
-### To Acess the solution visit : [Click_here](https://github.com/Bit-and-Pi/Python-for-Beginners/blob/main/Solutions/solutions.md)
+### To Acess the solution visit : [Click_here](https://gist.github.com/Bit-and-Pi/e0f0beaaa9d428b6ed2d3c2087b977b5)
