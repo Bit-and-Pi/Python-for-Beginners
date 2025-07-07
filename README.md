@@ -1,7 +1,6 @@
-<img src="https://github.com/Bit-and-Pi/ignore/blob/main/20241229_085931_0000%20-%20Copy.png" alt="Shubham" width="200" align="left">
+<img src="https://github.com/Bit-and-Pi/ignore/blob/main/hd-python-logo-symbol-transparent-png-735811696257415dbkifcuokn.png" alt="Shubham" width="100" align="left">
 
-# 🐍 Python for Beginners - YouTube Series
-
+# Python for Beginners - YouTube Series
 Welcome to the official repository for the **Python for Beginners** video series on YouTube!   
 This playlist is designed to help absolute beginners learn Python from scratch, with clear explanations and hands-on examples.
 
