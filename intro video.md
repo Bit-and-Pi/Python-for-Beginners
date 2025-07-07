@@ -1,4 +1,4 @@
-# Day 1 - Summary and Useful Links
+# Intro to Python for beginners course
 
 ## Topics Covered
 - [What is Python? Its Use Cases (Web, Data, Automation)](#what-is-python-its-use-cases-web-data-automation)

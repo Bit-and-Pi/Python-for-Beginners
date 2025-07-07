@@ -13,11 +13,12 @@
 |--|--|--|
 |1|Intro to python|[Click Here](#intro-to-python)|
 |2|Defining a variable|[Click Here](#defining-a-variable)|
-|3|Data Types in Python|[Click Here](#data-types-in-python)|
-|3-1|String Data Type|[Click Here](#3-1-string-data-type)|
-|3-2|Numeric Data Type|[Click Here](#3-2-numeric-data-type)|
-|3-3|Boolean & None Data Type|[Click Here](#3-3-boolean-and-none-data-type)|
-|3-4|Collection Data Type|[Click Here](#3-4-collection-data-type)|
+|3|Rules for Defining Variables in Python|[Click Here](#rules-for-defining-variables-in-python)|
+|4|Data Types in Python|[Click Here](#data-types-in-python)|
+|4-1|String Data Type|[Click Here](#4-1-string-data-type)|
+|4-2|Numeric Data Type|[Click Here](#4-2-numeric-data-type)|
+|4-3|Boolean & None Data Type|[Click Here](#4-3-boolean-and-none-data-type)|
+|4-4|Collection Data Type|[Click Here](#4-4-collection-data-type)|
 
 
 ## Intro to Python
@@ -73,6 +74,50 @@ Try experimenting with different variable names and values to solidify your unde
 **[🔝Index](#index)**
 
 ---
+
+## Rules for Defining Variables in Python
+
+When defining variables in Python, there are a few rules and guidelines to follow to ensure your code runs correctly and is easy to read. Let’s take a look at these essential rules:
+
+**1. Variable names must begin with a letter or an underscore (_).**
+   - Valid: `x`, `_my_variable`, `age`
+   - Invalid: `1age`, `@variable`
+
+ **2. Variable names can only contain letters (a-z, A-Z), numbers (0-9), and underscores (_).**
+   - Valid: `my_var`, `age_123`, `my_variable`
+   - Invalid: `my-variable`, `my variable`
+
+ **3. Variable names are case-sensitive.**
+   - `age`, `Age`, and `AGE` are considered different variables in Python.
+
+ **4. Avoid using Python keywords as variable names.**
+   - Keywords are reserved words in Python, and they have special meanings. You can’t use them as variable names. Examples of keywords include: `if`, `else`, `for`, `while`, `def`, `class`, etc.
+   - Valid: `variable`, `my_var`
+   - Invalid: `if`, `else`, `while`
+
+ **5. Variable names should be descriptive and follow a consistent naming convention.**
+   - Use **snake_case** for variable names (e.g., `user_age`, `total_price`).
+   - Avoid one-letter variables unless in specific cases (e.g., `x`, `y` in mathematical operations).
+
+ **6. You can reassign variables to different data types.**
+   - Since Python is dynamically typed, you can change the type of a variable during the execution of a program.
+   - Example:
+     ```python
+     x = 10        # x is an integer
+     x = "Hello"   # x is now a string
+     ```
+
+ **7. Whitespace (spaces, tabs) is not allowed within variable names.**
+   - Valid: `first_name`, `total_score`
+   - Invalid: `first name`, `total score`
+
+ **8. Variables cannot start with a number.**
+   - Valid: `age1`, `score_100`
+   - Invalid: `1age`, `100_score`
+
+**[🔝Index](#index)**
+
+---
 ## Data Types in Python
 
 Python supports several built-in **data types** that represent different kinds of values. Understanding these types is foundational to programming in Python.
@@ -87,7 +132,7 @@ Each type has unique properties and methods, and Python automatically manages me
 
 **[🔝Index](#index)**
 
-### 3-1 String Data Type
+### 4-1 String Data Type
 
 Strings (`str`) in Python represent sequences of Unicode characters. Strings are **immutable**, meaning once created, they cannot be changed directly.
 
@@ -107,7 +152,7 @@ print(greeting)  # Output: Hello, Alice!
 
 **[🔝Index](#index)**
 
-### 3-2 Numeric Data Type
+### 4-2 Numeric Data Type
 
 Python has three main numeric types:
 
@@ -132,7 +177,7 @@ print(a / b)   # Float division, output: 3.3333333333333335
 
 **[🔝Index](#index)**
 
-### 3-3 Boolean and None Data Type
+### 4-3 Boolean and None Data Type
 
 **Boolean (bool)**
 - Represents truth values: True and False.
@@ -163,7 +208,7 @@ if result is None:
 
 **[🔝Index](#index)**
 
-### 3-4 Collection Data Type
+### 4-4 Collection Data Type
 
 Python provides several built-in collection data types that group multiple values into a single variable. These collections are versatile and widely used to store, organize, and manipulate data.
 
