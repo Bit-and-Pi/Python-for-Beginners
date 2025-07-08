@@ -19,6 +19,7 @@
 |4-2|Numeric Data Type|[Click Here](#4-2-numeric-data-type)|
 |4-3|Boolean & None Data Type|[Click Here](#4-3-boolean-and-none-data-type)|
 |4-4|Collection Data Type|[Click Here](#4-4-collection-data-type)|
+|5|Summary|[Click Here](#summary)|
 
 
 ## Intro to Python
@@ -224,5 +225,30 @@ The main collection types are:
   fruits.append("orange")  # Adds "orange" to the list
   print(fruits[1])         # Output: banana
   ``` 
+
+**[🔝Index](#index)**
+
+## Summary
+
+Today, we began our journey with Python by exploring the fundamental concepts every beginner should know:
+
+- **Introduction to Python**  
+  Python is a beginner-friendly, high-level programming language known for its clean syntax and readability. It's widely used in fields like data science, automation, and web development.
+
+- **Defining Variables**  
+  Variables are used to store data. Python uses the `=` operator for assignment and infers data types automatically (dynamic typing).
+
+- **Variable Naming Rules**  
+  Variable names must start with a letter or underscore, cannot include spaces or special characters, and are case-sensitive. Keywords like `if` or `class` cannot be used as variable names.
+
+- **Data Types Overview**  
+  Python supports several built-in data types:
+  - **String (`str`)**: Text data
+  - **Numeric Types**: Integers, floats, and complex numbers
+  - **Boolean (`bool`)**: True/False values
+  - **NoneType (`None`)**: Represents no value
+  - **Collections**: Lists, tuples, sets, and dictionaries (covered partially today)
+
+This foundation will help you write clean, readable, and effective Python code in upcoming lessons.
 
 **[🔝Index](#index)**
